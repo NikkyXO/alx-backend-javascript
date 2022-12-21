@@ -10,3 +10,7 @@ node_modules
 9-main.js
 100-main.js
 0-main.js
+babel.config.js
+package-lock.json
+requirements.txt
+utils.js
