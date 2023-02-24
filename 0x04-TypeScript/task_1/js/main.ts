@@ -4,7 +4,7 @@ interface Teacher {
 	yearsOfExperience?: number;
 	fullTimeEmployee: boolean;
 	location: string;
-	contract?: boolean;
+	[propName: string]: any;
 }
 
 const teacher1: Teacher = {
@@ -30,17 +30,11 @@ const director1: Directors = {
 console.log(director1);
 
 
-// let printTeacher: Teacher;
-// Write an interface for the function named printTeacherFunction.
-
 
 function printTeacher(firstName: string, lastName: string) {
 	return firstName[0] + ". " + lastName;
 }
 
-
-// The constructor of the class should be described through an Interface
-// The class should be described through an Interface
 
 interface classStudent {
 	firstName: string;
