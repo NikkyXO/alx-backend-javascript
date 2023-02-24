@@ -9,19 +9,22 @@ function countStudents(fileName) {
     const lines = fileContents.toString().split('\n');
     for (let i = 0; i < lines.length; i += 1) {
       if (lines[i]) {
-        length += 1;
-        const field = lines[i].toString().split(',');
-        if (Object.prototype.hasOwnProperty.call(students, field[3])) {
-          students[field[3]].push(field[0]);
-        } else {
-          students[field[3]] = [field[0]];
-        }
-        if (Object.prototype.hasOwnProperty.call(fields, field[3])) {
-          fields[field[3]] += 1;
-        } else {
-          fields[field[3]] = 1;
-        }
-      }
+			length += 1;
+		  const field = lines[i].toString().split(",");
+		  
+			// checks if the students object already has a property with the value of the current line's 4th field
+			if (Object.prototype.hasOwnProperty.call(students, field[3])) {
+				students[field[3]].push(field[0]);
+			} else {
+				// it initializes a new array with the current student name.
+				students[field[3]] = [field[0]];
+			}
+			if (Object.prototype.hasOwnProperty.call(fields, field[3])) {
+				fields[field[3]] += 1;
+			} else {
+				fields[field[3]] = 1;
+			}
+		}
     }
     const l = length - 1;
     console.log(`Number of students: ${l}`);
