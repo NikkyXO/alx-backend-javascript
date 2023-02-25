@@ -1,18 +1,21 @@
 function calculateNumber(type, a, b) {
+	const an = Math.round(a);
+	const bn = Math.round(b);
+	let c = 0;
 	switch (type) {
 		case "SUM":
-			c = Math.round(a) + Math.round(b);
+			c = an + bn;
 			break;
 		case "SUBTRACT":
-			c = Math.round(a) - Math.round(b);
+			c = an - bn;
 			break;
 		case "DIVIDE":
-			if (Math.round(b) == 0) {
+			if (bn === 0) {
 				c = "Error";
 			} else {
-				c = Math.round(a) / Math.round(b);
-				break;
+				c = an / bn;
 			}
+			break;
 	}
 	return c;
 }
